@@ -37,6 +37,7 @@ Javaでは他者が作ったクラスを利用することが可能。このよ�
 すべてのプログラムを自分だけで開発する必要は無く、世界中のエンジニアが作った便利なメソッドを利用することで開発の幅は一気に広がる。  
 外部ライブラリを自分のプログラムに読み込む（使えるようにする）には、importを用いる。  
 クラス（ライブラリ）を読み込むにはclass定義より上で「import java.lang.〇〇」とする。
+例
 ```
 import java.lang.〇〇;
 
@@ -46,5 +47,32 @@ class Main {
   ・
   ・
  }
+}
+```
+java.langパッケージはJavaの基本的な機能がまとめられたパッケージ。  
+頻繁に利用するので「コンパイラが勝手にimportをしてくれる仕組み」になっている。
+そのため、インポート宣言をする必要が無い。また、同じパッケージに属するクラスのインポート宣言も省略が可能。
+また、インポート宣言時にアスタリスクを使って、そのパッケージに属するすべてのクラスをインポートが可能。
+System、String、StringBuffer、StringBuilder、Boolean、Byte、Integer、Mathなど  
+様々なクラスがjava.langには用意されている。  
+  
+### 入力の受け取り
+コンソールに値を「入力」し、その値をプログラム内で使うこともできる。
+コンソールへの入力を受け取るには「Scanner」というライブラリを用いる。  
+Scannerは「import java.util.Scanner」と読み込む。  
+例
+```
+import java.util.Scanner;
+
+class Main {
+  public static void main (String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    
+    System.out.print("名前： ");
+
+    String name = scanner.next();
+
+    System.out.println("こんにちは" + name + "さん");
+  }
 }
 ```
